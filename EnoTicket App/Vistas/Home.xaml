@@ -1,0 +1,342 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.Home"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             NavigationPage.HasNavigationBar="false"
+             Title="Home"
+             BackgroundColor="#0D1015">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Parte superior con color morado -->
+        <Frame Grid.Row="0" BackgroundColor="#4F1BBF" Padding="20" CornerRadius="0">
+            <VerticalStackLayout Padding="0" Spacing="20">
+                <!-- Logo + saludo -->
+                <Grid ColumnDefinitions="Auto,*"
+                          VerticalOptions="Start"
+                          Padding="0,10">
+                    <!-- Logo -->
+                    <Image Source="https://enoticket.com/img/logo.png"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+
+                    <!-- Saludo -->
+                    <Label Grid.Column="1"
+                               Text="¡Bienvenido, Usuario!"
+                               TextColor="White"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"
+                               FontAttributes="Bold"/>
+                </Grid>
+
+                <!-- Cuadro redondeado centrado con ubicación -->
+                <Frame BackgroundColor="#E0EAF9"
+                           CornerRadius="20"
+                           Padding="10"
+                           Margin="0,-20,0,0"
+                           WidthRequest="345"
+                           HeightRequest="55"
+                           HasShadow="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start">
+
+                    <Grid ColumnDefinitions="Auto, *"
+                              VerticalOptions="Start"
+                              HorizontalOptions="Start"
+                              Padding="5">
+                        <!-- Ícono de ubicación -->
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource Glyph="&#xf3c5;"
+                                                     FontFamily="FontAwesomeSolid"
+                                                     Size="28"
+                                                     Color="#4F1BBF"/>
+                            </Image.Source>
+                        </Image>
+
+                        <!-- Texto de ubicación -->
+                        <Label Grid.Column="1"
+                                   Text="Santiago, Chile"
+                                   FontSize="16"
+                                   TextColor="#0D1015"
+                                   VerticalOptions="Center"
+                                   Margin="10,0,0,0"/>
+
+                        <Image Grid.Column="2"
+                               HorizontalOptions="End"
+                               VerticalOptions="Start"
+                               Margin="300,0,0,0"
+                               WidthRequest="20"
+                               HeightRequest="20">
+                            <Image.Source>
+                                <FontImageSource Glyph="&#xf078;"
+                                                 FontFamily="FontAwesomeSolid"
+                                                 Size="20"
+                                                 Color="#4F1BBF"/>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- ScrollView para los carruseles -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="25" BackgroundColor="#0D1015">
+                <!-- Carrusel 1 -->
+                <ScrollView Orientation="Horizontal" Margin="0,15,0,0">
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
+                                       WidthRequest="350"
+                                       HeightRequest="200"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <Label Text="Texto Imagen 1"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,10"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
+                                       WidthRequest="350"
+                                       HeightRequest="200"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <Label Text="Texto Imagen 2"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,10"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
+                                       WidthRequest="350"
+                                       HeightRequest="200"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <Label Text="Texto Imagen 3"
+                                       TextColor="White"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,10"/>
+                            </Grid>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <!-- Título y botón para Carrusel 2 -->
+                <Grid ColumnDefinitions="*,Auto" BackgroundColor="#0D1015">
+                    <Label Text="Eventos"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Margin="30,0,0,0"
+                           HorizontalOptions="Start"/>
+                    <Button Text="Ver más"
+                            FontSize="18"
+                            BackgroundColor="Transparent"
+                            TextColor="#A58AF4"
+                            FontAttributes="Bold"
+                            HorizontalOptions="End"/>
+                </Grid>
+
+                <!-- Carrusel 2 -->
+                <ScrollView Orientation="Horizontal">
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño 1"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño 2"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño 3"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <!-- Título y botón para Carrusel 3 -->
+                <Grid ColumnDefinitions="*,Auto" BackgroundColor="#0D1015">
+                    <Label Text="Viñedos"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Margin="30,0,0,0"
+                           HorizontalOptions="Start"/>
+                    <Button Text="Ver todo"
+                            FontSize="18"
+                            BackgroundColor="Transparent"
+                            TextColor="#A58AF4"
+                            FontAttributes="Bold"
+                            HorizontalOptions="End"/>
+                </Grid>
+
+                <!-- Carrusel 3 -->
+                <ScrollView Orientation="Horizontal">
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño A"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="15" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño B"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Margin="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                        <Frame CornerRadius="15" Padding="0" HasShadow="False">
+                            <Grid>
+                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
+                                       WidthRequest="200"
+                                       HeightRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
+                                <Label Text="Texto Pequeño C"
+                                       TextColor="White"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="End"
+                                       Padding="0,0,0,5"/>
+                            </Grid>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Barra inferior -->
+        <Grid Grid.Row="2" HeightRequest="62" BackgroundColor="#4F1BBF">
+            <Border Stroke="#2E038C"
+            StrokeShape="RoundRectangle 10,10,10,10"
+            StrokeThickness="2">
+                <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*,*" RowSpacing="3">
+                    <!-- Botón más grande y centrado verticalmente -->
+                    <Button x:Name="ButtonHome"
+                            Grid.Column="1"
+                            WidthRequest="53"
+                            HeightRequest="53"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,10,0,0"
+                    BackgroundColor="Transparent">
+                        <Button.ImageSource>
+                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                     Glyph="&#xf015;"
+                                     Size="30"
+                                     Color="#000042"/>
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Button Grid.Column="2"
+                            x:Name="ButtonCuenta"
+                            WidthRequest="56"
+                            HeightRequest="53"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,0,0,-05"
+                            BackgroundColor="Transparent"
+                            Clicked="ButtonCuenta_Clicked">
+                        <Button.ImageSource>
+                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                     Glyph="&#xf2bd;"
+                                     Size="30"
+                                     Color="#000042"/>
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Label Grid.Row="1"
+                   Grid.Column="1"
+                   FontSize="10"
+                   HorizontalOptions="Center"
+                   Text="Home"
+                   TextColor="#D0D9D7"/>
+
+                    <Label Grid.Row="1"
+                   Grid.Column="2"
+                   FontSize="10"
+                   HorizontalOptions="Center"
+                   Text="Mi Cuenta"
+                   TextColor="#D0D9D7"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+
+    </Grid>
+</ContentPage>

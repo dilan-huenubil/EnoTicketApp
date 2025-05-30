@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.Register"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="Register"
+             BackgroundColor="#0D1015"
+             NavigationPage.HasNavigationBar="false">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Registro de Usuario"
+               FontSize="24"
+               HorizontalOptions="Center"
+               TextColor="#FFF"
+               FontAttributes="Bold" />
+
+            <!-- NOMBRE -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HeightRequest="24"
+                   WidthRequest="24">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf007;"
+                                     FontFamily="FontAwesomeSolid"
+                                     Size="24"
+                                     Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1"
+                   BackgroundColor="#E0EAF9"
+                   CornerRadius="15"
+                   Padding="10,0"
+                   HasShadow="False"
+                   HeightRequest="50"
+                   VerticalOptions="Center">
+                    <Entry Placeholder="Nombre"
+                       BackgroundColor="Transparent"
+                       PlaceholderColor="#4F1BBF"
+                       TextColor="#4F1BBF"
+                       x:Name="entryNombre" />
+                </Frame>
+            </Grid>
+
+            <!-- REPITE LO SIGUIENTE CAMBIANDO EL PLACEHOLDER, NAME Y GLYPH -->
+
+            <!-- APELLIDO -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf007;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Apellido" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryApellido"/>
+                </Frame>
+            </Grid>
+
+            <!-- RUT -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf2bb;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="RUT" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryRut"/>
+                </Frame>
+            </Grid>
+
+            <!-- NÚMERO DE TELÉFONO -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf095;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Número de Teléfono" Keyboard="Telephone" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryTelefono"/>
+                </Frame>
+            </Grid>
+
+            <!-- NÚMERO DE CELULAR -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf3cd;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Número de Celular" Keyboard="Telephone" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryCelular"/>
+                </Frame>
+            </Grid>
+
+            <!-- CORREO ELECTRÓNICO -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf0e0;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Correo Electrónico" Keyboard="Email" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryCorreo"/>
+                </Frame>
+            </Grid>
+
+            <!-- CONTRASEÑA -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf023;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Contraseña" IsPassword="True" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryContrasena"/>
+                </Frame>
+            </Grid>
+
+            <!-- CONFIRMAR CONTRASEÑA -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf00c;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <Entry Placeholder="Confirmar Contraseña" IsPassword="True" BackgroundColor="Transparent" PlaceholderColor="#4F1BBF" TextColor="#4F1BBF" x:Name="entryConfirmarContrasena"/>
+                </Frame>
+            </Grid>
+
+
+            <!-- FECHA DE NACIMIENTO -->
+            <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                <Image Margin="10,0" VerticalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf133;" FontFamily="FontAwesomeSolid" Size="24" Color="#4F1BBF"/>
+                    </Image.Source>
+                </Image>
+                <Frame Grid.Column="1" BackgroundColor="#E0EAF9" CornerRadius="15" Padding="10,0" HasShadow="False" HeightRequest="50">
+                    <DatePicker x:Name="datePickerFechaNacimiento"
+                    TextColor="#4F1BBF"
+                    BackgroundColor="Transparent"
+                    Format="dd/MM/yyyy"
+                    MaximumDate="{x:Static sys:DateTime.Now}"
+                    Margin="0,-0,0,-10" />
+                </Frame>
+            </Grid>
+
+
+            <!-- BOTÓN -->
+            <Button x:Name="ButtonRegister"
+                Text="Registrarse"
+                BackgroundColor="#732634"
+                TextColor="White"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                CornerRadius="15"
+                Clicked="ButtonRegister_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

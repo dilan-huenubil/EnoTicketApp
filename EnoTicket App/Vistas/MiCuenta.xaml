@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.MiCuenta"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="Mi Cuenta"
+             BackgroundColor="#0D1015"
+             NavigationPage.HasNavigationBar="false">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+
+            <!-- Título superior -->
+            <Label Text="Mi Cuenta"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   HorizontalOptions="Center" />
+
+            <!-- Perfil -->
+            <HorizontalStackLayout Margin="0,20,0,10" Spacing="15">
+                <Image HeightRequest="48" WidthRequest="48">
+                    <Image.Source>
+                        <FontImageSource Glyph="&#xf007;" FontFamily="FontAwesomeSolid" Color="#7523FA" />
+                    </Image.Source>
+                </Image>
+                <VerticalStackLayout>
+                    <Label Text="Hola" FontSize="16"/>
+                    <Label Text="Usuario " FontAttributes="Bold" FontSize="18"/>
+                    <Label Text="Tienes 219 EnoPuntos⭐"
+                           FontSize="14"
+                           TextColor="#C5D1D9"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Opciones -->
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Mi perfil -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf007;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Mi perfil" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Mis direcciones -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf3c5;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Mis direcciones" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Mis compras -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf290;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Mis compras" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Mis cupones (con badge) -->
+                <Grid>
+                    <HorizontalStackLayout>
+                        <Image HeightRequest="24" WidthRequest="24">
+                            <Image.Source>
+                                <FontImageSource Glyph="&#xf02b;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                            </Image.Source>
+                        </Image>
+                        <Label Text="Mis cupones" VerticalOptions="Center" Margin="10,0"/>
+                    </HorizontalStackLayout>
+                    <Label Text="15"
+                           BackgroundColor="#7523FA"
+                           TextColor="White"
+                           FontSize="12"
+                           WidthRequest="20"
+                           HeightRequest="20"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           Margin="60,0,0,0"/>
+                </Grid>
+
+                <!-- EnoPuntos Go -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf005;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="EnoPuntos Go" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Contacto -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf4ad;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Contáctanos" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Solicitudes -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf15c;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Solicitudes de atención" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+
+                <!-- Realizar solicitud -->
+                <HorizontalStackLayout>
+                    <Image HeightRequest="24" WidthRequest="24">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf044;" FontFamily="FontAwesomeSolid" Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Realizar solicitud" VerticalOptions="Center" Margin="10,0"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+
+
+            <!-- Botón cerrar sesión -->
+            <Button x:Name="ButtonLogout" 
+                    Text="Cerrar sesión"
+                    BackgroundColor="#732634"
+                    TextColor="#FFF"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="0,30"
+                    Clicked="ButtonLogout_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+    
+</ContentPage>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.Login"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="Login"
+             NavigationPage.HasNavigationBar="false">
+    <Grid RowDefinitions=".3*, .7*">
+        <Image Aspect="AspectFill" Source="https://vulcanopro.s3.amazonaws.com/images/zUezt0nbcHdaKobwyOxapaIW4PXS2OCf8dHuu99B.jpeg"/>
+        <Grid BackgroundColor="#0D0118" Opacity=".8"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFit"
+                   HeightRequest="80"
+                   Margin="20,0,0,0"
+                   Source="https://enoticket.com/img/logo.png"/>
+            <skia:SKLottieView Grid.Column="1"
+                               WidthRequest="120"
+                               RepeatCount="-1"
+                               Duration="5000"
+                               Source="Animation.json"/>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                                CornerRadius="30,30,0,0"
+                                Fill="#0D1015"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold"
+                       FontFamily="Lato-Bold"
+                       FontSize="Medium"
+                       Text="Bienvenido!"
+                       TextColor="#970FF2"/>
+                <Label FontFamily="Lato-Regular"
+                       Text="Ingrese tus credenciales"
+                       TextColor="#FFF"/>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#0D1015"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="75"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="FontAwesomeSolid"
+                                Glyph="&#xf0e0;"
+                                Size="44"
+                                Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+
+                    <Frame Grid.Column="1"
+                           CornerRadius="15"
+                           Padding="0"
+                           HasShadow="False"
+                           BackgroundColor="#E0EAF9"
+                           VerticalOptions="Center"
+                           HeightRequest="60">
+                        <Entry Placeholder="Correo Electronico"
+                               BackgroundColor="Transparent"
+                               TextColor="#491F73"
+                               x:Name="entryUsername"
+                               VerticalOptions="Center"
+                               PlaceholderColor="#4F1BBF"/>
+                    </Frame>
+                </Grid>
+
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#0D1015"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="75"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="FontAwesomeSolid"
+                                Glyph="&#xf084;"
+                                Size="44"
+                                Color="#4F1BBF"/>
+                        </Image.Source>
+                    </Image>
+
+                    <Frame Grid.Column="1"
+                           CornerRadius="15"
+                           Padding="0"
+                           HasShadow="False"
+                           BackgroundColor="#E0EAF9"
+                           VerticalOptions="Center"
+                           HeightRequest="60">
+                        <Entry Placeholder="Contraseña"
+                               IsPassword="True"
+                               BackgroundColor="Transparent"
+                               TextColor="#491F73"
+                               x:Name="entryPassword"
+                               VerticalOptions="Center"
+                               PlaceholderColor="#4F1BBF"/>
+                    </Frame>
+                </Grid>
+                <Button 
+                    x:Name="btnLogin"
+                    Margin="0,20,0,0"
+                    Background="#732634"
+                    HeightRequest="60"
+                    Text="Iniciar Sesión"
+                    TextColor="#E0EAF9"
+                    Clicked="btnLogin_Clicked"
+                   />
+                <Label Margin="0,20,0,-10"
+                       BackgroundColor="#0D1015"
+                       Text="¿Olvidaste tu contraseña?"
+                       TextColor="#970FF2"
+                       TextDecorations="Underline"
+                       HorizontalOptions="Center"/>
+                <Button
+                    x:Name="btnCrearCuenta"
+                    Margin="0,30,0,0"
+                    BackgroundColor="#0D1015"
+                    HeightRequest="60"
+                    Text="Crear tu Cuenta"
+                    TextColor="#970FF2"
+                    Clicked="btnCrearCuenta_Clicked"/>
+
+
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.EscanerBiometrico"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="EscanerBiometrico"
+             BackgroundColor="#0D1015"
+             NavigationPage.HasNavigationBar="false">
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Fill">
+
+        <!-- Título arriba centrado -->
+        <Label Text="Verificación Biométrica"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White"
+               VerticalOptions="Start" />
+
+        <!-- Subtítulo -->
+        <Label Text="Escanear datos biométricos "
+               FontSize="16"
+               HorizontalOptions="Center"
+               TextColor="LightGray"
+               VerticalOptions="Start" />
+
+        <!-- Espacio para empujar los botones al centro -->
+        <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
+
+        <!-- Botones centrados -->
+        <VerticalStackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Botón para tomar foto -->
+            <Frame BackgroundColor="#732634"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="12"
+                   x:Name="BotonCamara">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Image WidthRequest="28" HeightRequest="28">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xf030;" 
+                                             FontFamily="FontAwesomeSolid"
+                                             Size="28"
+                                             Color="White"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="  Tomar Foto" 
+                           FontSize="18"
+                           TextColor="White"
+                           VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Frame>
+
+
+        </VerticalStackLayout>
+
+        <Image x:Name="imagenCarnet"
+               IsVisible="False"
+               HeightRequest="250"
+               Aspect="AspectFit"
+               Margin="0,20,0,0"
+               HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
