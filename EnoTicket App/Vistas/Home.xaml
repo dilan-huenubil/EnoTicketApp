@@ -86,53 +86,52 @@
             <VerticalStackLayout Spacing="25" BackgroundColor="#0D1015">
                 <!-- Carrusel 1 -->
                 <ScrollView Orientation="Horizontal" Margin="0,15,0,0">
-                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Margin="10,0,0,0">
                         <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
-                                       WidthRequest="350"
-                                       HeightRequest="200"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
-                                <Label Text="Texto Imagen 1"
+                            <Grid WidthRequest="350" HeightRequest="200">
+                                <ImageButton x:Name="ButtonEVVM"
+                                             Source="https://disfrutasantiago.cl/wp-content/uploads/2025/02/67abb82d9253d306842630.jpeg"
+                                             Aspect="AspectFill"
+                                             Clicked="ButtonEVVM_Clicked"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="55"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Vendimia Valle del Maipo 2025"
                                        TextColor="White"
                                        FontSize="16"
                                        FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,10"/>
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                         <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
-                                       WidthRequest="350"
-                                       HeightRequest="200"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
-                                <Label Text="Texto Imagen 2"
-                                       TextColor="White"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,10"/>
+                            <Grid WidthRequest="350" HeightRequest="200">
+                                <Image Source="https://www.fiestascostumbristas.cl/wp-content/uploads/2025/03/Fiesta-del-Vino-Pirque-2025-1024x670.webp"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="55"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Fiesta del Vino Pirque 2025"
+                                           TextColor="White"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
-                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
-                                       WidthRequest="350"
-                                       HeightRequest="200"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
-                                <Label Text="Texto Imagen 3"
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False" Margin="0,0,05,0">
+                            <Grid WidthRequest="350" HeightRequest="200">
+                                <Image Source="https://ecopass-static-temporal.s3.amazonaws.com/1d121784-57b3-4944-b19e-b28a459e02c3"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="55"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Feria del Vino de La Reina  2025"
                                        TextColor="White"
                                        FontSize="16"
                                        FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,10"/>
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                     </HorizontalStackLayout>
@@ -156,53 +155,51 @@
 
                 <!-- Carrusel 2 -->
                 <ScrollView Orientation="Horizontal">
-                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" Margin="10,0,0,0">
                         <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño 1"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,5"/>
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="https://cdn.mallmarina.cl/mallcurico/uploads/2025/02/MM-EVENTO-KIT-FALABELLA-850x480-1.jpg"
+                                        Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Vive la Fiesta de la Vendimia 2025"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                         <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño 2"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,5"/>
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="https://www.fiestascostumbristas.cl/wp-content/uploads/2025/03/Fiesta-del-Vino-Pirque-2025-1024x670.webp"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Fiesta del Vino Pirque 2025"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"
+                                           Margin="20,0,0,0"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
-                        <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño 3"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,5"/>
+                        <Frame CornerRadius="20" Padding="0" HasShadow="False" Margin="0,0,05,0">
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="https://ecopass-static-temporal.s3.amazonaws.com/1d121784-57b3-4944-b19e-b28a459e02c3"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Feria del Vino de La Reina  2025"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                     </HorizontalStackLayout>
@@ -225,54 +222,51 @@
                 </Grid>
 
                 <!-- Carrusel 3 -->
-                <ScrollView Orientation="Horizontal">
-                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <ScrollView Orientation="Horizontal" Padding="10,0,0,50">
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" >
                         <Frame CornerRadius="20" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e7/86/f8.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño A"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,5"/>
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="piedra_amarilla.jpeg"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Tour Piedra Amarilla"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                         <Frame CornerRadius="15" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://mujeronline.cl/wp-content/uploads/2022/11/vinas-vino-industria.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño B"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Margin="0,0,0,5"/>
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="premium_vinedo_robleria.jpeg"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Tour Premium En Viñedo Roblería"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
-                        <Frame CornerRadius="15" Padding="0" HasShadow="False">
-                            <Grid>
-                                <Image Source="https://www.tourschilereal.cl/wp-content/uploads/2021/01/Valle-del-Maipo-Chile.jpg"
-                                       WidthRequest="200"
-                                       HeightRequest="120"
-                                       HorizontalOptions="Center"/>
-                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="30"/>
-                                <Label Text="Texto Pequeño C"
-                                       TextColor="White"
-                                       FontSize="14"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="End"
-                                       Padding="0,0,0,5"/>
+                        <Frame CornerRadius="15" Padding="0" HasShadow="False" Margin="0,0,05,0">
+                            <Grid WidthRequest="200" HeightRequest="150">
+                                <Image Source="paseo_vinedo_carruaje.jpeg"
+                                       Aspect="AspectFill"/>
+                                <BoxView BackgroundColor="#000000" Opacity="0.5" VerticalOptions="End" HeightRequest="50"/>
+                                <VerticalStackLayout VerticalOptions="End" Padding="5" Margin="0,0,0,5">
+                                    <Label Text="Paseo Por El Viñedo En Carruaje"
+                                           TextColor="White"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"
+                                           LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
                     </HorizontalStackLayout>
@@ -283,26 +277,45 @@
         <!-- Barra inferior -->
         <Grid Grid.Row="2" HeightRequest="62" BackgroundColor="#4F1BBF">
             <Border Stroke="#2E038C"
-            StrokeShape="RoundRectangle 10,10,10,10"
-            StrokeThickness="2">
-                <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*,*" RowSpacing="3">
-                    <!-- Botón más grande y centrado verticalmente -->
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    StrokeThickness="2">
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" RowSpacing="3">
+                    <!-- Botón Home -->
                     <Button x:Name="ButtonHome"
+                            Grid.Column="0"
+                            WidthRequest="53"
+                            HeightRequest="53"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,10,0,0"
+                            BackgroundColor="Transparent">
+                        <Button.ImageSource>
+                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                             Glyph="&#xf015;"
+                                             Size="30"
+                                             Color="#000042"/>
+                        </Button.ImageSource>
+                    </Button>
+
+                    <!-- Botón Carrito (nuevo) -->
+                    <Button x:Name="ButtonCarrito"
                             Grid.Column="1"
                             WidthRequest="53"
                             HeightRequest="53"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
                             Margin="0,10,0,0"
-                    BackgroundColor="Transparent">
+                            BackgroundColor="Transparent"
+                            Clicked="ButtonCarrito_Clicked">
                         <Button.ImageSource>
                             <FontImageSource FontFamily="FontAwesomeSolid"
-                                     Glyph="&#xf015;"
-                                     Size="30"
-                                     Color="#000042"/>
+                                             Glyph="&#xf07a;"
+                                             Size="30"
+                                             Color="#000042"/>
                         </Button.ImageSource>
                     </Button>
 
+                    <!-- Botón Mi Cuenta -->
                     <Button Grid.Column="2"
                             x:Name="ButtonCuenta"
                             WidthRequest="56"
@@ -314,25 +327,31 @@
                             Clicked="ButtonCuenta_Clicked">
                         <Button.ImageSource>
                             <FontImageSource FontFamily="FontAwesomeSolid"
-                                     Glyph="&#xf2bd;"
-                                     Size="30"
-                                     Color="#000042"/>
+                                             Glyph="&#xf2bd;"
+                                             Size="30"
+                                             Color="#000042"/>
                         </Button.ImageSource>
                     </Button>
 
+                    <!-- Labels -->
                     <Label Grid.Row="1"
-                   Grid.Column="1"
-                   FontSize="10"
-                   HorizontalOptions="Center"
-                   Text="Home"
-                   TextColor="#D0D9D7"/>
-
+                           Grid.Column="0"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Home"
+                           TextColor="#D0D9D7"/>
                     <Label Grid.Row="1"
-                   Grid.Column="2"
-                   FontSize="10"
-                   HorizontalOptions="Center"
-                   Text="Mi Cuenta"
-                   TextColor="#D0D9D7"/>
+                           Grid.Column="1"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Carrito"
+                           TextColor="#D0D9D7"/>
+                    <Label Grid.Row="1"
+                           Grid.Column="2"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Mi Cuenta"
+                           TextColor="#D0D9D7"/>
                 </Grid>
             </Border>
         </Grid>

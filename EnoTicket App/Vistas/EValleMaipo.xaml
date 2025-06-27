@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.EValleMaipo"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             NavigationPage.HasNavigationBar="false"
+             Title="Vendimia Valle del Maipo"
+             BackgroundColor="#0D1015">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Parte superior con color morado -->
+        <Frame Grid.Row="0" BackgroundColor="#4F1BBF" Padding="5" CornerRadius="0">
+            <VerticalStackLayout Padding="0" Spacing="20">
+                <Grid RowDefinitions="Auto,Auto,*,Auto">
+                    <Grid Grid.Row="0" HeightRequest="62" BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="ButtonBack"
+                                WidthRequest="90"
+                                HeightRequest="50"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                Margin="-23,0,0,0"
+                                BackgroundColor="Transparent"
+                                Clicked="ButtonBack_Clicked">
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeSolid"
+                                                 Glyph="&#xf104;"
+                                                 Size="55"
+                                                 Color="#FFF"/>
+                            </Button.ImageSource>
+                        </Button>
+
+                        <Label Grid.Column="1" BackgroundColor="Transparent"/>
+
+                        <StackLayout Grid.Column="2"
+                                     Orientation="Horizontal"
+                                     HorizontalOptions="End"
+                                     VerticalOptions="Center"
+                                     Spacing="5"
+                                     Margin="0,0,10,0"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="40"
+                                     WidthRequest="130">
+                            <Label FontFamily="FontAwesomeSolid"
+                                   FontSize="33"
+                                   Text="&#xf4e3;"
+                                   TextColor="#111"/>
+                            <Label FontSize="20"
+                                   Text="EnoTicket"
+                                   TextColor="#D0D9D7"
+                                   VerticalOptions="Center"
+                                   Margin="10,0,0,0"/>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <ScrollView  Grid.Row="1" Margin="0,10,0,0">
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Imagen de fondo con degradado -->
+                <Grid Padding="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="330"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Imagen de fondo -->
+                    <Image Source="https://disfrutasantiago.cl/wp-content/uploads/2025/02/67abb82d9253d306842630.jpeg"
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       MaximumHeightRequest="450"
+                       WidthRequest="382"/>
+
+                    <!-- Degradado en la parte inferior -->
+                    <BoxView Background="#0D0118"
+                         Opacity="0.5"
+                         Grid.Row="0"
+                         HeightRequest="100"
+                         VerticalOptions="End"
+                         WidthRequest="500"/>
+                    <Label Text="Vendimia Valle del Maipo 2025: ¡Vive la Fiesta del Vino en el Parque Padre Hurtado!"
+                           FontSize="20"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="20,0,20,20"
+                           LineBreakMode="WordWrap"
+                           MaxLines="5"
+                           WidthRequest="340"
+                           Grid.Row="0"/>
+                </Grid>
+                <Label Text="Vendimia del Valle del Maipo 2025: Celebra la cosecha de uvas en la 3ª edición de la Vendimia del Valle del Maipo, del 25 al 27 de abril en el Parque Padre Hurtado, Santiago."
+                       FontSize="16"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Start"
+                       Margin="20,0,20,20"
+                       LineBreakMode="WordWrap"
+                       MaxLines="8"
+                       WidthRequest="350"/>
+                <Label Text="Detalles del Evento"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,0"/>
+                
+                <HorizontalStackLayout Margin="20,0">
+                    <Label FontFamily="FontAwesomeSolid"
+                           Text="&#xf073;"  
+                           FontSize="20"
+                           TextColor="#A58AF4"
+                           VerticalOptions="Center"/>
+                    <Label Text="25 al 27 de abril 2025"
+                               FontSize="18"
+                               TextColor="White"
+                               Margin="10,0,0,0"
+                               VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                
+                <HorizontalStackLayout Margin="20,0">
+                    <Label FontFamily="FontAwesomeSolid"
+                           Text="&#xf3c5;"  
+                           FontSize="20"
+                           TextColor="#A58AF4"
+                           VerticalOptions="Center"/>
+                        <Label Text="Lugar: Parque Padre Hurtado, Santiago"
+                               FontSize="18"
+                               TextColor="White"
+                               Margin="10,0,0,0"
+                               VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+
+                <HorizontalStackLayout Margin="20,0">
+                    <Label FontFamily="FontAwesomeSolid"
+                           Text="&#xf001;" 
+                           FontSize="20"
+                           TextColor="#A58AF4"
+                           VerticalOptions="Center"/>
+                        <Label Text="Música en vivo, degustaciones y más..."
+                               FontSize="18"
+                               TextColor="White"
+                               Margin="10,0,0,0"
+                               VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <Image Source="https://enoticket.com/img/logo.png"
+                       Aspect="AspectFit"
+                       Grid.Row="0"
+                       MaximumHeightRequest="150"
+                       MaximumWidthRequest="160"/>
+                <Label Text="PREVENTA"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,0"/>
+                <Label Text="Venta de copas y degustaciones"
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,-10,0,0"/>
+                <Grid ColumnDefinitions="*,*,*" Padding="10,-60,0,0" RowSpacing="10">
+                    <!-- Preventa 1 -->
+                    <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                        <Image Source="preventa1.png"
+                               HeightRequest="220"
+                               Aspect="AspectFit"/>
+                        <Button x:Name="ButtonC" 
+                                Text="Compra aquí"
+                                BackgroundColor="#844A67"
+                                TextColor="White"
+                                CornerRadius="20"
+                                Padding="10,5"
+                                Margin="0,-50,0,0"
+                                HorizontalOptions="Center"
+                                Clicked="ButtonC_Clicked"/>
+                    </VerticalStackLayout>
+
+                    <!-- Preventa 2 -->
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                        <Image Source="preventa2.png"
+                               HeightRequest="220"
+                               Aspect="AspectFit"/>
+                        <Button x:Name="ButtonC2" 
+                                Text="Compra aquí"
+                                BackgroundColor="#844A67"
+                                TextColor="White"
+                                CornerRadius="20"
+                                Padding="10,5"
+                                Margin="0,-50,0,0"
+                                HorizontalOptions="Center"
+                                Clicked="ButtonC_Clicked"/>
+                    </VerticalStackLayout>
+
+                    <!-- Preventa 3 -->
+                    <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                        <Image Source="preventa3.png"
+                               HeightRequest="220"
+                               Aspect="AspectFit"/>
+                        <Button x:Name="ButtonC3" 
+                                Text="Compra aquí"
+                                BackgroundColor="#844A67"
+                                TextColor="White"
+                                CornerRadius="20"
+                                Padding="10,5"
+                                Margin="0,-50,0,0"
+                                HorizontalOptions="Center"
+                                Clicked="ButtonC_Clicked"/>
+                    </VerticalStackLayout>
+                </Grid>
+                <Label Text="La organización se reserva el derecho a subir los valores sin previo aviso.
+Menores de edad entran acompañados de un adulto. Ticket válidos solo para la fecha indicada."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,0"
+                       Padding="0,0,0,60"
+                       HorizontalTextAlignment="Center"
+                       WidthRequest="340"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>

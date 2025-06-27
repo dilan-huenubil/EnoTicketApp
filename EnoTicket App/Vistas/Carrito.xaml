@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.Carrito"
+             Title="Carrito"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#0D1015">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Parte superior con color morado -->
+        <Frame Grid.Row="0" BackgroundColor="#4F1BBF" Padding="5" CornerRadius="0">
+            <VerticalStackLayout Padding="0" Spacing="20">
+                <Grid RowDefinitions="Auto,Auto,*,Auto">
+                    <Grid Grid.Row="0" HeightRequest="62" BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ButtonBack"
+                                WidthRequest="90"
+                                HeightRequest="50"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                Margin="-23,0,0,0"
+                                BackgroundColor="Transparent"
+                                Clicked="ButtonBack_Clicked">
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeSolid"
+                                                 Glyph="&#xf104;"
+                                                 Size="55"
+                                                 Color="#FFF"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Label Grid.Column="1" Text="Carro de compras"
+                                   FontSize="25"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Margin="30,0,0,0"
+                                   VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Contenido principal del carrito -->
+        <ScrollView Grid.Row="1" Margin="0,0,0,0">
+            <VerticalStackLayout Spacing="0" Padding="0">
+
+                <!-- Producto principal 1 - Preventa 1 (Sin Frame, usando todo el ancho) -->
+                <VerticalStackLayout BackgroundColor="White" Padding="15" Spacing="0" Margin="0,0,0,05">
+                    <Grid RowDefinitions="Auto,Auto,Auto">
+                        <!-- Header con marca y botón cerrar -->
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                            <Label Text="PREVENTA 1" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                            <Button Grid.Column="1" 
+                                    BackgroundColor="Transparent"
+                                    WidthRequest="30"
+                                    HeightRequest="30">
+                                <Button.ImageSource>
+                                    <FontImageSource FontFamily="FontAwesomeSolid"
+                                                     Glyph="&#xf00d;"
+                                                     Size="16"
+                                                     Color="Gray"/>
+                                </Button.ImageSource>
+                            </Button>
+                        </Grid>
+
+                        <!-- Producto con imagen y detalles -->
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="#111140" 
+                                   CornerRadius="10" 
+                                   Padding="10"
+                                   WidthRequest="80"
+                                   HeightRequest="80">
+                                <Image Source="preventa1.png" 
+                                       WidthRequest="75" 
+                                       HeightRequest="65"
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"/>
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="15,0,0,0" Spacing="5">
+                                <Label Text="1 Copa con 3 tickets de degustación" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Más cargo por servicio" 
+                                       FontSize="14" 
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Controles de cantidad y precios -->
+                        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="0,15,0,0">
+                            <!-- Control de cantidad -->
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="Transparent" 
+                                   BorderColor="Gray"
+                                   CornerRadius="8"
+                                   Padding="0">
+                                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                                    <Button Grid.Column="0"
+                                            x:Name="BtnDecrementarPreventa1"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="DecrementarPreventa1_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf068;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Label Grid.Column="1"
+                                           x:Name="LabelCantidadPreventa1"
+                                           Text="0" 
+                                           FontSize="16"
+                                           TextColor="#4F1BBF"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"/>
+                                    <Button Grid.Column="2"
+                                            x:Name="BtnIncrementarPreventa1"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="IncrementarPreventa1_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf067;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Precios -->
+                            <VerticalStackLayout Grid.Column="1" 
+                                                 HorizontalOptions="End" 
+                                                 Spacing="2">
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Preventa:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$11.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="10,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Normal:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$18.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="20,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <!-- Separador visual -->
+                <BoxView BackgroundColor="#E0E0E0" HeightRequest="1" Margin="0"/>
+
+                <!-- Producto principal 2 - Preventa 2 (Sin Frame, usando todo el ancho) -->
+                <VerticalStackLayout BackgroundColor="White" Padding="15" Spacing="0" Margin="0,0,0,05">
+                    <Grid RowDefinitions="Auto,Auto,Auto">
+                        <!-- Header con marca y botón cerrar -->
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                            <Label Text="PREVENTA 2" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                            <Button Grid.Column="1" 
+                                    BackgroundColor="Transparent"
+                                    WidthRequest="30"
+                                    HeightRequest="30">
+                                <Button.ImageSource>
+                                    <FontImageSource FontFamily="FontAwesomeSolid"
+                                                     Glyph="&#xf00d;"
+                                                     Size="16"
+                                                     Color="Gray"/>
+                                </Button.ImageSource>
+                            </Button>
+                        </Grid>
+
+                        <!-- Producto con imagen y detalles -->
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="#111140" 
+                                   CornerRadius="10" 
+                                   Padding="10"
+                                   WidthRequest="80"
+                                   HeightRequest="80">
+                                <Image Source="preventa2.png" 
+                                       WidthRequest="75" 
+                                       HeightRequest="65"
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"/>
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="15,0,0,0" Spacing="5">
+                                <Label Text="1 Copa con 5 tickets de degustación" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Más cargo por servicio" 
+                                       FontSize="14" 
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Controles de cantidad y precios -->
+                        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="0,15,0,0">
+                            <!-- Control de cantidad -->
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="Transparent" 
+                                   BorderColor="Gray"
+                                   CornerRadius="8"
+                                   Padding="0">
+                                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                                    <Button Grid.Column="0"
+                                            x:Name="BtnDecrementarPreventa2"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="DecrementarPreventa2_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf068;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Label Grid.Column="1" 
+                                           x:Name="LabelCantidadPreventa2"
+                                           Text="0" 
+                                           FontSize="16"
+                                           TextColor="#4F1BBF"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"/>
+                                    <Button Grid.Column="2"
+                                            x:Name="BtnIncrementarPreventa2"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="IncrementarPreventa2_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf067;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Precios -->
+                            <VerticalStackLayout Grid.Column="1" 
+                                                 HorizontalOptions="End" 
+                                                 Spacing="2">
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Preventa:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$16.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="10,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Normal:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$18.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="20,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <!-- Separador visual -->
+                <BoxView BackgroundColor="#E0E0E0" HeightRequest="1" Margin="0"/>
+
+                <!-- Producto principal 3 - Preventa 3 (Sin Frame, usando todo el ancho) -->
+                <VerticalStackLayout BackgroundColor="White" Padding="15" Spacing="0">
+                    <Grid RowDefinitions="Auto,Auto,Auto">
+                        <!-- Header con marca y botón cerrar -->
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                            <Label Text="PREVENTA 3" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                            <Button Grid.Column="1" 
+                                    BackgroundColor="Transparent"
+                                    WidthRequest="30"
+                                    HeightRequest="30">
+                                <Button.ImageSource>
+                                    <FontImageSource FontFamily="FontAwesomeSolid"
+                                                     Glyph="&#xf00d;"
+                                                     Size="16"
+                                                     Color="Gray"/>
+                                </Button.ImageSource>
+                            </Button>
+                        </Grid>
+
+                        <!-- Producto con imagen y detalles -->
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="#111140" 
+                                   CornerRadius="10" 
+                                   Padding="10"
+                                   WidthRequest="80"
+                                   HeightRequest="80">
+                                <Image Source="preventa3.png" 
+                                       WidthRequest="75" 
+                                       HeightRequest="65"
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"/>
+                            </Frame>
+
+                            <VerticalStackLayout Grid.Column="1" Margin="15,0,0,0" Spacing="5">
+                                <Label Text="1 Copa con 8 tickets de degustación" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="Más cargo por servicio" 
+                                       FontSize="14" 
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <!-- Controles de cantidad y precios -->
+                        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" Margin="0,15,0,0">
+                            <!-- Control de cantidad -->
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="Transparent" 
+                                   BorderColor="Gray"
+                                   CornerRadius="8"
+                                   Padding="0">
+                                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                                    <Button Grid.Column="0"
+                                            x:Name="BtnDecrementarPreventa3"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="DecrementarPreventa3_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf068;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Label Grid.Column="1"
+                                           x:Name="LabelCantidadPreventa3"
+                                           Text="0" 
+                                           FontSize="16"
+                                           TextColor="#4F1BBF"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"/>
+                                    <Button Grid.Column="2"
+                                            x:Name="BtnIncrementarPreventa3"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            HeightRequest="40"
+                                            Clicked="IncrementarPreventa3_Clicked">
+                                        <Button.ImageSource>
+                                            <FontImageSource FontFamily="FontAwesomeSolid"
+                                                             Glyph="&#xf067;"
+                                                             Size="16"
+                                                             Color="Gray"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Precios -->
+                            <VerticalStackLayout Grid.Column="1" 
+                                                 HorizontalOptions="End" 
+                                                 Spacing="2">
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Preventa:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$21.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="10,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,Auto">
+                                    <Label Grid.Column="0" 
+                                           Text="Precio Normal:" 
+                                           FontSize="14" 
+                                           TextColor="#111111"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1" 
+                                           Text="$24.000" 
+                                           FontSize="14" 
+                                           TextColor="#4F1BBF"
+                                           Margin="20,0,0,0"
+                                           FontAttributes="Bold"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <!-- Espacio antes de los productos adicionales -->
+                <BoxView BackgroundColor="#0D1015" HeightRequest="20"/>
+
+
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True" Margin="15,0">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="¡Te Puede Interesar!" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="Black"/>
+
+                        <!-- ScrollView horizontal mejorado para evitar conflictos -->
+                        <ScrollView Orientation="Horizontal" 
+                                    HeightRequest="160"
+                                    HorizontalScrollBarVisibility="Never"
+                                    VerticalScrollBarVisibility="Never">
+                            <HorizontalStackLayout Spacing="15" Padding="5">
+                                <!-- Producto 1 -->
+                                <Frame BackgroundColor="White" 
+                                       CornerRadius="10" 
+                                       Padding="10"
+                                       WidthRequest="120"
+                                       HeightRequest="140"
+                                       HasShadow="True">
+                                    <VerticalStackLayout Spacing="8">
+                                        <Frame BackgroundColor="#F5F5F5" 
+                                               CornerRadius="8" 
+                                               Padding="20"
+                                               HeightRequest="80">
+                                            <ImageButton x:Name="Buttonvvm"  
+                                                         Source="https://disfrutasantiago.cl/wp-content/uploads/2025/02/67abb82d9253d306842630.jpeg" 
+                                                         WidthRequest="200" 
+                                                         HeightRequest="80"
+                                                         HorizontalOptions="Center" 
+                                                         VerticalOptions="Center"
+                                                         Clicked="ButtonEVVM_Clicked"/>
+                                        </Frame>
+
+                                        <Label Text="Vendimia Valle del Maipo 2025" 
+                                               FontSize="12" 
+                                               TextColor="Black"
+                                               MaxLines="5"
+                                               HorizontalTextAlignment="Center"
+                                               FontAttributes="Bold"
+                                               LineBreakMode="WordWrap"
+                                               WidthRequest="100"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Producto 2 -->
+                                <Frame BackgroundColor="White" 
+                                       CornerRadius="10" 
+                                       Padding="10"
+                                       WidthRequest="120"
+                                       HeightRequest="140"
+                                       HasShadow="True">
+                                    <VerticalStackLayout Spacing="8">
+                                        <Frame BackgroundColor="#F5F5F5" 
+                                               CornerRadius="8" 
+                                               Padding="20"
+                                               HeightRequest="80">
+                                            <Image Source="https://www.fiestascostumbristas.cl/wp-content/uploads/2025/03/Fiesta-del-Vino-Pirque-2025-1024x670.webp" 
+                                                   WidthRequest="200" 
+                                                   HeightRequest="80"
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+
+                                        <Label Text="Fiesta del Vino Pirque 2025" 
+                                               FontSize="12" 
+                                               TextColor="Black"
+                                               MaxLines="2"
+                                               HorizontalTextAlignment="Center"
+                                               FontAttributes="Bold"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Producto 3 -->
+                                <Frame BackgroundColor="White" 
+                                       CornerRadius="10" 
+                                       Padding="10"
+                                       WidthRequest="120"
+                                       HeightRequest="140"
+                                       HasShadow="True">
+                                    <VerticalStackLayout Spacing="8">
+                                        <Frame BackgroundColor="#F5F5F5" 
+                                               CornerRadius="8" 
+                                               Padding="20"
+                                               HeightRequest="80">
+                                            <Image Source="https://ecopass-static-temporal.s3.amazonaws.com/1d121784-57b3-4944-b19e-b28a459e02c3" 
+                                                   WidthRequest="200" 
+                                                   HeightRequest="80"
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+
+                                        <Label Text="Feria del Vino de La Reina  2025" 
+                                               FontSize="12" 
+                                               TextColor="Black"
+                                               MaxLines="2"
+                                               HorizontalTextAlignment="Center"
+                                               FontAttributes="Bold"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Producto 4 -->
+                                <Frame BackgroundColor="White" 
+                                       CornerRadius="10" 
+                                       Padding="10"
+                                       WidthRequest="120"
+                                       HeightRequest="140"
+                                       HasShadow="True">
+                                    <VerticalStackLayout Spacing="8">
+                                        <Frame BackgroundColor="#F5F5F5" 
+                                               CornerRadius="8" 
+                                               Padding="20"
+                                               HeightRequest="80">
+                                            <Image Source="piedra_amarilla.jpeg" 
+                                                   WidthRequest="200" 
+                                                   HeightRequest="80"
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                        </Frame>
+
+                                        <Label Text="Tour Piedra Amarilla" 
+                                               FontSize="12" 
+                                               TextColor="Black"
+                                               MaxLines="2"
+                                               HorizontalTextAlignment="Center"
+                                               FontAttributes="Bold"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </HorizontalStackLayout>
+                        </ScrollView>
+                    </VerticalStackLayout>
+                </Frame>
+                <!-- Sección de Cupones -->
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True" Margin="15,10,10,0">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Cupones" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="Black"/>
+
+                        <!-- Input de cupón -->
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="#F5F5F5" 
+                                   CornerRadius="8" 
+                                   Padding="0"
+                                   HasShadow="False">
+                                <Entry x:Name="EntryCupon"
+                                       Placeholder="Cupón de descuento"
+                                       FontSize="14"
+                                       TextColor="Black"
+                                       PlaceholderColor="Gray"
+                                       BackgroundColor="Transparent"/>
+                            </Frame>
+
+                            <Button Grid.Column="1"
+                                    x:Name="ButtonAplicarCupon"
+                                    Text="Aplicar"
+                                    BackgroundColor="#8B2CF5"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    CornerRadius="8"
+                                    WidthRequest="80"
+                                    HeightRequest="40"
+                                    Margin="10,0,0,0"/>
+                        </Grid>
+
+
+ 
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Espacio entre secciones -->
+                <BoxView BackgroundColor="#0D1015" HeightRequest="15"/>
+
+                <!-- Sección de Medio de Pago -->
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True" Margin="15,0">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Medio de Pago" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="Black"/>
+
+                        <Label Text="Selecciona un medio de pago para continuar con tu compra"
+               FontSize="14"
+               TextColor="Gray"/>
+
+
+                        <Frame x:Name="Frame"
+                               BackgroundColor="White"
+                               BorderColor="#E0E0E0"
+                               CornerRadius="8"
+                               Padding="15"
+                               HasShadow="False">
+                            <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                                <Frame Grid.Column="0"
+                                       BackgroundColor="#8B2CF5"
+                                       CornerRadius="15"
+                                       Padding="8"
+                                       WidthRequest="30"
+                                       HeightRequest="30">
+                                    
+                                    <Label Text="R"
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+                                </Frame>
+
+                                <Label Grid.Column="1"
+                                       Text="Webplay Debito"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       VerticalOptions="Center"
+                                       Margin="15,0,0,0"/>
+
+                                <Frame Grid.Column="3"
+                                       x:Name="Radio"
+                                       BackgroundColor="Transparent"
+                                       BorderColor="#E0E0E0"
+                                       CornerRadius="10"
+                                       Padding="0"
+                                       WidthRequest="20"
+                                       HeightRequest="20">
+                                    <Frame x:Name="RadioInner"
+                                           BackgroundColor="Transparent"
+                                           CornerRadius="8"
+                                           Padding="0"
+                                           WidthRequest="12"
+                                           HeightRequest="12"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Opción Webpay -->
+                        <Frame x:Name="FrameWebpay"
+                               BackgroundColor="#8B2CF5"
+                               BorderColor="#8B2CF5"
+                               CornerRadius="8"
+                               Padding="15"
+                               HasShadow="False">
+
+                            <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                                <Frame Grid.Column="0"
+                       BackgroundColor="White"
+                       CornerRadius="8"
+                       Padding="5"
+                       WidthRequest="40"
+                       HeightRequest="25">
+                                    <Label Text="webpay"
+                           FontSize="10"
+                           FontAttributes="Bold"
+                           TextColor="#FF6B35"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                                </Frame>
+
+                                <Label Grid.Column="1"
+                                       Text="Webplay Crédito"
+                                       FontSize="16"
+                                       TextColor="White"
+                                       VerticalOptions="Center"
+                                       Margin="15,0,0,0"/>
+
+                                <Frame Grid.Column="3"
+                                       x:Name="RadioWebpay"
+                                       BackgroundColor="White"
+                                       BorderColor="White"
+                                       CornerRadius="10"
+                                       Padding="0"
+                                       WidthRequest="20"
+                                       HeightRequest="20">
+                                    <Frame x:Name="RadioWebpayInner"
+                                           BackgroundColor="#8B2CF5"
+                                           CornerRadius="8"
+                                           Padding="0"
+                                           WidthRequest="12"
+                                           HeightRequest="12"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                    </VerticalStackLayout>
+                </Frame>
+                <!-- Espacio final -->
+                <BoxView BackgroundColor="#0D1015" HeightRequest="20"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Footer con totales y botón de compra -->
+        <Frame Grid.Row="2" 
+               BackgroundColor="White" 
+               CornerRadius="0" 
+               Padding="20"
+               HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <!-- Totales -->
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Total a Pagar:" 
+                           FontSize="16" 
+                           TextColor="Black"
+                           FontAttributes="Bold" />
+                    <Label Grid.Row="0" Grid.Column="1"
+                           x:Name="LabelTotal"
+                           Text="$0" 
+                           FontSize="16" 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                </Grid>
+
+                <!-- Botón continuar compra -->
+                <Button x:Name="ButtonPagar" 
+                        Text="Pagar"
+                        BackgroundColor="#8B2CF5"
+                        TextColor="White"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        CornerRadius="25"
+                        WidthRequest="300"
+                        HeightRequest="50"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

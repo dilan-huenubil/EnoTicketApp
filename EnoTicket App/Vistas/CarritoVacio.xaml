@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnoTicket_App.Vistas.CarritoVacio"
+             Title="CarritoVacio"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#0D1015">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Parte superior con color morado -->
+        <Frame Grid.Row="0" BackgroundColor="#4F1BBF" Padding="5" CornerRadius="0">
+            <VerticalStackLayout Padding="0" Spacing="20">
+                <Grid RowDefinitions="Auto,Auto,*,Auto">
+                    <Grid Grid.Row="0" HeightRequest="62" BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ButtonBack"
+                                WidthRequest="90"
+                                HeightRequest="50"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                Margin="-23,0,0,0"
+                                BackgroundColor="Transparent"
+                                Clicked="ButtonBack_Clicked">
+                            <Button.ImageSource>
+                                <FontImageSource FontFamily="FontAwesomeSolid"
+                                                 Glyph="&#xf104;"
+                                                 Size="55"
+                                                 Color="#FFF"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Label Grid.Column="1" Text="Carro de compras"
+                                   FontSize="25"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Margin="30,0,0,0"
+                                   VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Contenido principal con mensaje de carrito vacío -->
+        <Grid Grid.Row="1" Padding="20">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" 
+                           Text="EL CARRITO ESTA VACÍO"
+                           TextColor="White"
+                           FontSize="27"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Margin="0,0,10,0"/>
+
+                    <Label Grid.Column="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontFamily="FontAwesomeSolid" 
+                                      Text="&#xf07a;" 
+                                      FontSize="35" 
+                                      TextColor="White"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
